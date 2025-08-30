@@ -14,7 +14,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 MODEL_NAME     = os.getenv("MODEL_NAME", "gpt-4o-mini")
 
 SERVICE_BRAND = os.getenv("SERVICE_BRAND", "D-tect 법률전문가 연계")
-CTA_URL       = os.getenv("CTA_URL", "https://192.168.219.45/api/bot/webhook")
+CTA_URL       = os.getenv("CTA_URL", "http://127.0.0.1:8081/api/bot/webhook")
 CTA_PITCH     = os.getenv("CTA_PITCH", "법률 도움이 필요하시다면 D-tect 전문 변호사와 바로 연결해 드립니다.")
 EMERGENCY_NUMBER = os.getenv("EMERGENCY_NUMBER", "112")
 HELPLINES = os.getenv("HELPLINES", "109:자살예방(24시간),1388:청소년상담(24시간),1366:여성긴급(24시간)")
@@ -161,4 +161,3 @@ logging.basicConfig(level=logging.INFO)
 async def all_exception_handler(request, exc):
     logging.error("Unhandled error at %s\n%s", request.url.path, traceback.format_exc())
     return JSONResponse(status_code=500, content={"message": "서버 오류가 발생했습니다.", "detail": str(exc)})
-

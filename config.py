@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SERVICE_BRAND = os.getenv("SERVICE_BRAND", "D-tect 법률전문가 연계")
-CTA_URL       = os.getenv("CTA_URL", " https://192.168.219.45/api/bot/webhook")
-CTA_PITCH     = os.getenv("CTA_PITCH", "법률 도움이 필요하시다면 D-tect 전문 변호사와 연결해 드립니다.")
+SERVICE_BRAND = os.getenv("SERVICE_BRAND", "D-tect 법률전문가 연계").strip()
+CTA_URL       = os.getenv("CTA_URL", "http://127.0.0.1:8081/api/bot/webhook").strip()
+CTA_PITCH     = os.getenv("CTA_PITCH", "법률 도움이 필요하시다면 D-tect 전문 변호사와 연결해 드립니다.").strip()
 
 EMERGENCY_NUMBER = os.getenv("EMERGENCY_NUMBER", "112")
 
